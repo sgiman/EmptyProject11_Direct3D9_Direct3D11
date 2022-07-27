@@ -152,13 +152,13 @@ bool CALLBACK OnDeviceRemoved( void* pUserContext )
 //--------------------------------------------------------------------------------------
 int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow )
 {
-    // Включите проверку памяти во время выполнения для отладочных сборок.
+// Включите проверку памяти во время выполнения для отладочных сборок.
 #if defined(DEBUG) | defined(_DEBUG)
     _CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
 #endif
 
 
-	// DXUT создаст и использует лучшее устройство (либо D3D9, либо D3D11)
+    // DXUT создаст и использует лучшее устройство (либо D3D9, либо D3D11)
     // который доступен в системе в зависимости от того, какие обратные вызовы D3D установлены ниже
 	 
     // SУстановите общие обратные вызовы DXUT
@@ -170,7 +170,7 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
     DXUTSetCallbackDeviceRemoved( OnDeviceRemoved );
 
     // Установить обратные вызовы D3D9 DXUT. 
-	// Удалитm эти наборы, если приложению не требуется поддержка D3D9.
+    // Удалитm эти наборы, если приложению не требуется поддержка D3D9.
     DXUTSetCallbackD3D9DeviceAcceptable( IsD3D9DeviceAcceptable );
     DXUTSetCallbackD3D9DeviceCreated( OnD3D9CreateDevice );
     DXUTSetCallbackD3D9DeviceReset( OnD3D9ResetDevice );
@@ -179,7 +179,7 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
     DXUTSetCallbackD3D9DeviceDestroyed( OnD3D9DestroyDevice );
 
     // Установить обратные вызовы D3D11 DXUT. 
-	// Удалите эти наборы, если приложению не требуется поддержка D3D11.
+    // Удалите эти наборы, если приложению не требуется поддержка D3D11.
     DXUTSetCallbackD3D11DeviceAcceptable( IsD3D11DeviceAcceptable );
     DXUTSetCallbackD3D11DeviceCreated( OnD3D11CreateDevice );
     DXUTSetCallbackD3D11SwapChainResized( OnD3D11ResizedSwapChain );
@@ -189,7 +189,7 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
 
     // Выполнить любую инициализацию на уровне приложения здесь
 
-    DXUTInit( true, true, NULL ); 			// Разобрать командную строку, показать msgbox при ошибке, без дополнительных параметров командной строки
+    DXUTInit( true, true, NULL ); 		// Разобрать командную строку, показать msgbox при ошибке, без дополнительных параметров командной строки
     DXUTSetCursorSettings( true, true );	// Показывать курсор и обрезать его в полноэкранном режиме
     DXUTCreateWindow( L"EmptyProject11" );
 
@@ -197,9 +197,9 @@ int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdL
     DXUTCreateDevice( D3D_FEATURE_LEVEL_10_0, true, 640, 480 );
     DXUTMainLoop(); // Войти в цикл рендеринга DXUT
 
-	//......................................................
+    //......................................................
     // Выполните любую очистку на уровне приложения здесь
-	//......................................................
+    //......................................................
 
     return DXUTGetExitCode();
 }
